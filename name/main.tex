@@ -142,9 +142,9 @@ The eastward SBC are continuous flows with annual-mean speed up to \SI{20}{\cent
 The annual-mean Leeuwin Current Extension transport decreases from \SI{1.1}{Sv} as it rounds Cape Leeuwin to \SI{0.1}{Sv} at the western edge of the Great Australian Bight due to strong downwelling and offshore exports near Cape Leeuwin. 
 East of Cape Leeuwin and along the zonal shelf, the South Australian Current transport is steady due to onshore flows balanced out by downwelling exports. Along the slanted shelf, the onshore flows are stronger than downwelling exports and result in an increased Zeehan Current transport up to \SI{0.4}{Sv} eastward south of Tasmania.
 
-We find that the SBC and offshore-FC are coupled through onshore Ekman transport and that the SBC and slope-FC are coupled through downwelling. 
-The combined effect of the SBC--offshore-FC horizontal pair and SBC--slope-FC vertical pair is a conversion of widespread northward Ekman transport into downwelling with little impact on the eastward SBC transport. In contrast, the onshore flows feeding into the FC are largely converted into increasing westward FC transport.
-Even though the Leeuwin Current System off western Australia and the Southern Australia Current System are fed by different onshore transports, namely a pressure gradient-driven geostrophic transport off western Australia and a wind-driven Ekman transport off southern Australia, the annual-mean circulation of the two systems are remarkably similar.
+We find that the SBC and offshore-FC are coupled through onshore Ekman drift and that the SBC and slope-FC are coupled through downwelling. 
+The combined effect of the SBC--offshore-FC horizontal pair and SBC--slope-FC vertical pair is a conversion of widespread northward Ekman drift into downwelling with little impact on the eastward SBC transport. In contrast, the onshore flows feeding into the FC are largely converted into increasing westward FC transport.
+Even though the Leeuwin Current System off western Australia and the Southern Australia Current System are fed by different onshore transports, namely a pressure gradient-driven geostrophic transport off western Australia and a wind-driven Ekman drift off southern Australia, the annual-mean circulation of the two systems are remarkably similar.
 
 An overview of the system's seasonality shows the strength of the SBC and FC vary in opposite phase. In summer, when the winds are upwelling favourable, the SBC are weaker and partly reversed (to westward). In autumn, the winds become downwelling favourable and the FC is weaker and partly reversed (to eastward). In contrast, the Leeuwin Current System persists annually. The balance mechanism maintaining the seasonal opposition in intensity between the SBC and FC is unknown and warrants further research.
 \end{abstract}
@@ -216,55 +216,21 @@ CARS-Aus8, which we call CARS, is a 1/8\dg-resolution climatology of ocean tempe
 
 \citet{Ridgway2002} validated CARS against independent data and found that CARS consistently agrees with satellite and in-situ sea surface temperature products and represents the general features of the annual amplitude and phase (for the seasonal variability). Salinity fronts were much better represented in CARS than in another traditional climatology, particularly in boundary current regions. Uncertainty maps indicate CARS sea surface temperature over the whole Australasia is within the $\pm$0.5 $^{\circ}C$ range \citep{Ridgway2002}. Within this difference pattern, there are coherent large-scale features and more intense small-scale structures near the shelf. Near the shelf, they found inappropriately short spatial scales occur when the observations fed into CARS are heavily non-spatially uniform and form clusters of close-packed data separated by data poorer or voided areas. These tend to allow the formation of inappropriately short spatial scales from one cluster to the next. This caveat is further discussed when we next introduce the model used in this study.
 
-To include Ekman transport in the CARS transport budget analysis, we use wind stress from ERA-Interim gridded reanalysis \citep{Dee2011} averaged over 2003--2012. We choose a period corresponding to the final decade of CARS sampling when the number of observations in the upper \SI{2000}{m} is dramatically increased due to the global Argo array launch in 2000. In general, ERA-Interim winds are stronger between 30 and 60\dg S than satellite winds from QuikSCAT \citep{Chaudhuri2013}, meaning that wind-driven Ekman transport derived from ERA-Interim may be stronger than from satellite observations.
+To include Ekman drift in the CARS transport budget analysis, we use wind stress from ERA-Interim gridded reanalysis \citep{Dee2011} averaged over 2003--2012. We choose a period corresponding to the final decade of CARS sampling when the number of observations in the upper \SI{2000}{m} is dramatically increased due to the global Argo array launch in 2000. In general, ERA-Interim winds are stronger between 30 and 60\dg S than satellite winds from QuikSCAT \citep{Chaudhuri2013}, meaning that wind-driven Ekman drift derived from ERA-Interim may be stronger than from satellite observations.
 
 MOM01-75z, which we call MOM01, is a 1/10\dg-resolution ocean model using the MOM5 code \citep{Griffies2012} and providing non-assimilated temperature, salinity and velocity fields gridded over 75 vertical levels \citep{Stewart2017}. Similarly to CARS, these levels are thin near the surface and increase in thickness with increasing depth.
 The model is global and forced by CORE2-NYF, a repeated climatological annual cycle of sea-surface atmospheric forcing with six hourly synoptic variability \citep{Large2009}.
 MOM01 is forced under this cycle for 108 years where we select the last 7 years to produce our equilibrated mean ocean state.
 
-We use the temperature and salinity fields in MOM01 to calculate geostrophic velocity (see Section~\ref{Geostrophic velocity derivation}) to compare with CARS in \ref{MOM01 validation with CARS}. A short discussion of how a MOM01 transport budget derived from geostrophic velocity compares with the same budget derived from actual model velocity is presented in Section\,\ref{Southern Australia Current System Transport Budget}.
+We use the temperature and salinity fields in MOM01 to calculate geostrophic velocity (see Section~\ref{Geostrophic velocity derivation}) to compare with CARS in \ref{Geostrophic velocity validation}. A short discussion of how a MOM01 transport budget derived from geostrophic velocity compares with the same budget derived from actual model velocity is presented in Section\,\ref{Southern Australia Current System Transport Budget}.
 
 In Section\,\ref{Southern Australia Current System Structure} we find that CARS shows some minor artificial fragmentation in the currents which we briefly discussed above citing \citet{Ridgway2002}. Our high resolution model, however, produces a coherent current system. In addition to this, the prescribed climatological forcing applied to the model results in a numerical simulation of a mean and seasonal cycle that is well suited for comparison with an observational climatology like CARS.
 We note that, similarly to ERA-Interim winds, the winds in CORE2-NYF, which are based on the NCEP reanalysis, are generally stronger than satellite winds from QuikSCAT \citep{Large2009}; although in the Southern Hemisphere, the westerlies are slightly stronger in ERA-Interim, particularly around 50\dg S \citep{Chaudhuri2013}.
 
 \subsection{Geostrophic velocity derivation} \label{Geostrophic velocity derivation}
-The varying flow structures of the Southern Australia Current System greatly reduce our ability to test different depth levels of no-motion to derive geostrophic velocities. Since the FC can extend as deep as \SI{2000}{\meter} \citep{Middleton2002}, we choose a reference depth of $z\sub{ref} = \SI{-2000}{\meter}$, which is also the depth limit of Argo observations. We note that the annual-mean density field in CARS and MOM01 agree reasonably well, except near Albany where CARS shows lighter surface densities, which would result in a higher Albany High (not shown).
+The Southern Australia Current System varying flow structures reduce our ability to test different depth levels of no-motion to derive geostrophic velocities. Since the FC can extend as deep as \SI{2000}{\meter} \citep{Middleton2002}, we choose a reference depth of $z\sub{ref} = \SI{-2000}{\meter}$, which is also the depth limit of Argo observations. We note the annual-mean density field in CARS and MOM01 agree reasonably well everywhere, except near Albany where CARS shows lighter surface densities (\ref{Annual-mean density field validation}), which would result in a higher Albany High and a locally stronger FC in CARS (\ref{Velocity field validation}).
 
-To compute geostrophic velocities in regions shallower than the reference depth, we apply the Helland-Hansen method \citep{Helland-Hansen1934,Fomin1964}. This method states that velocities at the bottom of a land portion shallower than the reference depth are zero. We first compute geostrophic velocities referenced to the surface and then remove a vertically-uniform velocity field that cancels out the geostrophic velocities at the reference depth in the ocean interior or at the sea bottom over the margin; hence
-
-\begin{equation}
-\Vec{v\sub{g}^{*}} = \Vec{v\sub{0}} - \Vec{v\sub{0}}(z=z\sub{HH}),
-\end{equation}
-%
-where $z \in [\SI{-2000}{\meter}, 0]$ is the local depth, $z\sub{HH} = \max(z\sub{ref},z\sub{b})$ is a depth that corresponds to the shallowest level between $z\sub{ref}$ and the local sea bottom depth $z\sub{b}(x,y)$, $\Vec{v\sub{0}}=(u\sub{0},v\sub{0})$ are the geostrophic velocities referenced to the surface and $\Vec{v\sub{g}^{*}}$ are the geostrophic velocities from the Helland-Hansen method.
-
-To account for the wind effect at the surface we calculate the Ekman drift $\Vec{V\sub{ek}}$ (\si{\square\meter\per\second}) as
-
-\begin{equation}
-\Vec{V\sub{ek}} = -\Vec{k} \times \frac{\boldsymbol{\tau}}{f\rho\sub{0}},
-\end{equation}
-%
-where $\Vec{k}$ is an upward pointing unit vector, $\boldsymbol{\tau}=(\boldsymbol{\tau}^{x},\boldsymbol{\tau}^{y})$ is the wind stress, $f$ is the Coriolis parameter and $\rho\sub{0}$ is a constant mean density. Note that in the geostrophic calculation, we assume that the bottom is slippery and therefore there is no Ekman transport at the bottom.
-
-A drawback of the Helland-Hansen method is that it produces large vertical flows across the sea bottom over the margin, which introduces error in three-dimensional transport budgets. These cross-bottom leaks are evident from high divergence values in the depth-integrated velocity field, $\nabla\cdot\Vec{V}^{*}$ (not shown). This depth-integrated velocity field $\Vec{V}^{*}=\Vec{V\sub{g}^{*}}+\Vec{V\sub{ek}}$ is the sum of contributions from both geostrophy and Ekman drift and is defined as
-
-\begin{equation}
-\Vec{V}^{*} = \int_{z\sub{HH}}^{0}\Vec{v\sub{g}^{*}}\ dz + \Vec{V\sub{ek}}.
-\end{equation}
-%
-To eliminate this deficiency, we apply the Zero-Divergence method described in \citet{Furue2017}. Here, we remove a second barotropic velocity field $\Vec{V\sub{d}}=\nabla\phi$ from $\Vec{V}^{*}$ such that $\nabla\cdot(\Vec{V}^{*}-\nabla\phi)=0$, so that $\phi$ satisfies the Poisson equation
-
-\begin{equation}
-\nabla^{2}\phi = \nabla\cdot\Vec{V}^{*}.
-\end{equation}
-%
-We solve the above equation by setting a no-flow condition on $\Vec{V\sub{d}}$ everywhere at the solid land and open ocean boundaries except along the southern open ocean boundary. At the southern boundary we set $\phi=0$ there to allow for a net inflow or outflow of $\Vec{V\sub{d}}$ to compensate for the total divergence $\iint\nabla\cdot\Vec{V}^{*}\,dx\,dy$. In order to ensure the impact of that weak artificial flow over the Southern Australia Current System is minimal, we set the open boundary \ang{2} south of our domain, along \ang{50}S. The resulting adjusted geostrophic field $\Vec{v\sub{g}}$ is expressed as
-
-\begin{equation}
-\Vec{v\sub{g}} = \Vec{v\sub{g}^{*}} - \frac{\Vec{V\sub{d}}}{-z\sub{HH}},
-\end{equation}
-%
-where $\nabla\cdot\Vec{V}=\nabla\cdot(\int_{z\sub{HH}}^{0}\Vec{v\sub{g}}\ dz + \Vec{V\sub{ek}})=0$ everywhere including over the continental shelf and slope.
+To compute geostrophic velocities in regions shallower than the reference depth, we apply the Helland-Hansen method \citep{Helland-Hansen1934,Fomin1964}. This method states velocities at the bottom of a land portion shallower than the reference depth are zero. This method and Ekman drift calculation are set out in \ref{Helland-Hansen method}. A drawback of the Helland-Hansen method is that it produces unphysical vertical flows across the sea bottom over the margin, which introduces error in three-dimensional transport budgets. To eliminate this deficiency, and obtain a three-dimensional transport budget that closes to computer precision, we apply the Zero-Divergence method described in \citet{Furue2017} and here in \ref{Zero-divergence method}.
 
 \subsection{SBC and FC definition} \label{SBC and FC definition}
 To calculate the Southern Australia Current System transport budgets we define two control volumes, one surrounding the SBC and the other surrounding the FC\@. These boundaries are defined by visually inspecting meridional sections in CARS. We then apply the same boundaries to the mean field in MOM01 to keep consistent volumes in our calculations. 
@@ -327,11 +293,11 @@ Since the shelf orientation varies, we increase the distance between the SBC's n
 We remove $y\sub{CC}$ where the shallow shelf is narrow and the coastal currents are insignificant, that is anywhere outside the Great Australian Bight, the Bass Strait, the Gulfs region north of Cape Jaffa. Finally, we define the FC's southern boundary $y\sub{OF}$ by following the \SIadj{2000}{\meter} isobath. West of Portland $y\sub{OF}$ is set to be 3/2\dg~south of this isobath. Elsewhere, it is set to be 7/4\dg~south. South of Tasmania, the boundary is manually adjusted to lie at \ang{45.5}S.
 The green, red and magenta curves in Fig.\,\ref{f03_fig1_} are $y\sub{CC}$, $y\sub{int}$ and $y\sub{OF}$ as defined above.
 
-We note that MOM01 shows continuous SBC that are well incorporated into the SBC control volume (Fig.\,\ref{f03_fig1_}c). Even though CARS is a long-term climatology, it still includes some coastal eddy-like ``noise'' in the region (Fig.\,\ref{f03_fig1_}a), which is likely due to the superposition of eddies recorded at different times. Recently, \citet{Oke2018} found that the shelf off the Great Australian Bight is rich in mesoscale eddies with surface-intensified currents coherent over the water column. The eddies, which are hypothetically due to the horizontal shear associated with the SBC, are most energetic when the SBC start to seasonally weaken. In MOM01, the synoptic structure of eddies, particularly in the Leeuwin Current Extension region, is evident on transient timescales (not shown). Defining fixed boundaries around the SBC is, however, adequate, because the long-term mean boundary circulation is mostly dominated by the geostrophic flow. The SBC's jet like shape is maintained by the southward propagation of pressure anomalies coming from the Leeuwin Current System and turning eastward along the southern coast of Australia \citep{Middleton2007, Ridgway2015}. In winter, the currents are reinforced due to intensification of westerly winds and increased onshore Ekman transport \citep{Ridgway2004}. Hence, in our fixed boundary definition for the SBC, any eddies and eddy-like meandering flows crossing the boundaries will be captured as an inflow or outflow into the currents. \citet{Furue2017} also applied fixed boundaries for the Leeuwin Current System, because the Leeuwin Current, which co-exists with eddies, is also a jet-like flow.
+We note that MOM01 shows continuous SBC that are well incorporated into the SBC control volume (Fig.\,\ref{f03_fig1_}c). Even though CARS is a long-term climatology, it still includes some coastal eddy-like ``noise'' in the region (Fig.\,\ref{f03_fig1_}a), which is likely due to the superposition of eddies recorded at different times. Recently, \citet{Oke2018} found that the shelf off the Great Australian Bight is rich in mesoscale eddies with surface-intensified currents coherent over the water column. The eddies, which are hypothetically due to the horizontal shear associated with the SBC, are most energetic when the SBC start to seasonally weaken. In MOM01, the synoptic structure of eddies, particularly in the Leeuwin Current Extension region, is evident on transient timescales (not shown). Defining fixed boundaries around the SBC is, however, adequate, because the long-term mean boundary circulation is mostly dominated by the geostrophic flow. The SBC's jet like shape is maintained by the southward propagation of pressure anomalies coming from the Leeuwin Current System and turning eastward along the southern coast of Australia \citep{Middleton2007, Ridgway2015}. In winter, the currents are reinforced due to intensification of westerly winds and increased onshore Ekman drift \citep{Ridgway2004}. Hence, in our fixed boundary definition for the SBC, any eddies and eddy-like meandering flows crossing the boundaries will be captured as an inflow or outflow into the currents. \citet{Furue2017} also applied fixed boundaries for the Leeuwin Current System, because the Leeuwin Current, which co-exists with eddies, is also a jet-like flow.
 
 \subsection{Transport budget derivation} \label{Transport budget derivation}
 We calculate the local zonal transport within these volumes,
-which we refer to as the SBC or FC transport, and the inward/outward transport across all volume boundaries which we refer to as the cross-boundary transport. The SBC transports include both geostrophic and Ekman transports. The FC transports include geostrophic and Ekman transport in the upper layer south of the SBC, and only geostrophic transports in the lower layer (slope-FC and offshore-FC).
+which we refer to as the SBC or FC transport, and the inward/outward transport across all volume boundaries which we refer to as the cross-boundary transport. The SBC transports include both geostrophic and Ekman drifts. The FC transports include geostrophic and Ekman drift in the upper layer south of the SBC, and only geostrophic transports in the lower layer (slope-FC and offshore-FC).
 We carry out the same calculations on the full (total) velocity from MOM01.
 Below, we provide identities for SBC and FC that connect their longshore transports to cross-boundary exchanges. The following equations represent a transport in volume per unit time in Sverdrups (\si{Sv},  \SI[parse-numbers=false]{10^6}{\cubic\meter\per\second}).
 
@@ -761,7 +727,7 @@ The continuity of the near-surface shelf break currents extending from Northwest
 
 The dual analysis of observations and model in this study, goes beyond the traditional approach of validating a model based on a range of indices available from observations, and then analyzing spatial and temporal variability using the model alone. We find here that applying identical methods to both model and observations, leads to enhanced confidence in the structure and transport of the Southern Australia Current System.
 
-In this work, we have discovered a coupling between the SBC and slope-FC through downwelling, and between the SBC and offshore-FC through onshore Ekman drift. The annual-mean Ekman drift is largely onshore along the Southern Australian shelves (Fig.\,\ref{f18_fig1_}). In the Great Australian Bight and in front of the Spencer and St Vincent Gulfs, the Ekman drift curls anti-clockwise resulting in weaker onshore Ekman transport. The onshore Ekman transport is consistent with downwelling flows which are strongest where the shelf is steep, that is everywhere outside of the Great Australian Bight (Fig.\,\ref{f16_fig1_}).
+In this work, we have discovered a coupling between the SBC and slope-FC through downwelling, and between the SBC and offshore-FC through onshore Ekman drift. The annual-mean Ekman drift is largely onshore along the Southern Australian shelves (Fig.\,\ref{f18_fig1_}). In the Great Australian Bight and in front of the Spencer and St Vincent Gulfs, the Ekman drift curls anti-clockwise resulting in weaker onshore Ekman drift. The onshore Ekman drift is consistent with downwelling flows which are strongest where the shelf is steep, that is everywhere outside of the Great Australian Bight (Fig.\,\ref{f16_fig1_}).
 
 On one hand, the combined effect of the horizontally coupled SBC--offshore-FC pair and vertically coupled SBC--slope-FC pair is a conversion of a widespread northward Ekman drift into downwelling with little impact on the transport of the SBC\@. On the other hand, a large part of the onshore flows into the FC is directly converted into increasing westward transport from close to zero along western Tasmania to \SI{12.3}{Sv} near the western side of Australia. 
 
@@ -783,7 +749,59 @@ PS was supported by an Australian Research Council (ARC) DECRA Fellowship DE1501
 \setcounter{figure}{0}
 
 \section{MOM01 validation with CARS} \label{MOM01 validation with CARS}
-sfsd
+\subsection{Geostrophic velocity field validation} \label{Geostrophic velocity validation}
+ddd
+
+\subsection{Surface density field validation} \label{Annual-mean density field validation}
+ddd
+
+\subsection{Velocity field validation} \label{Velocity field validation}
+ddd
+
+\subsection{Velocity sections validation} \label{Velocity sections validation}
+ddd
+
+\section{Geostrophic velocity derivation} \label{Geostrophic velocity derivation appendix}
+\subsection{Helland-Hansen method and Ekman drift calculation} \label{Helland-Hansen method}
+To compute geostrophic velocities in regions shallower than the reference depth, we apply the Helland-Hansen method \citep{Helland-Hansen1934,Fomin1964}. This method states velocities at the bottom of a land portion shallower than the reference depth are zero. We first compute geostrophic velocities referenced to the surface and then remove a vertically-uniform velocity field that cancels out the geostrophic velocities at the reference depth in the ocean interior or at the sea bottom over the margin; hence
+
+\begin{equation}
+\Vec{v\sub{g}^{*}} = \Vec{v\sub{0}} - \Vec{v\sub{0}}(z=z\sub{HH}),
+\end{equation}
+%
+where $z \in [\SI{-2000}{\meter}, 0]$ is the local depth, $z\sub{HH} = \max(z\sub{ref},z\sub{b})$ is a depth that corresponds to the shallowest level between $z\sub{ref}$ and the local sea bottom depth $z\sub{b}(x,y)$, $\Vec{v\sub{0}}=(u\sub{0},v\sub{0})$ are the geostrophic velocities referenced to the surface and $\Vec{v\sub{g}^{*}}$ are the geostrophic velocities from the Helland-Hansen method.
+
+To account for the wind effect at the surface we calculate the Ekman drift $\Vec{V\sub{ek}}$ (\si{\square\meter\per\second}) as
+
+\begin{equation}
+\Vec{V\sub{ek}} = -\Vec{k} \times \frac{\boldsymbol{\tau}}{f\rho\sub{0}},
+\end{equation}
+%
+where $\Vec{k}$ is an upward pointing unit vector, $\boldsymbol{\tau}=(\boldsymbol{\tau}^{x},\boldsymbol{\tau}^{y})$ is the wind stress, $f$ is the Coriolis parameter and $\rho\sub{0}$ is a constant mean density. Note that in the geostrophic calculation, we assume that the bottom is slippery and therefore there is no Ekman drift at the bottom.
+
+A drawback of the Helland-Hansen method is that it produces large vertical flows across the sea bottom over the margin, which introduces error in three-dimensional transport budgets. These cross-bottom leaks are evident from high divergence values in the depth-integrated velocity field, $\nabla\cdot\Vec{V}^{*}$ (not shown). This depth-integrated velocity field $\Vec{V}^{*}=\Vec{V\sub{g}^{*}}+\Vec{V\sub{ek}}$ is the sum of contributions from both geostrophy and Ekman drift and is defined as
+
+\begin{equation}
+\Vec{V}^{*} = \int_{z\sub{HH}}^{0}\Vec{v\sub{g}^{*}}\ dz + \Vec{V\sub{ek}}.
+\end{equation}
+%
+To eliminate this deficiency, we apply the Zero-Divergence method described in \citet{Furue2017} and in \ref{Zero-divergence method}.
+
+\subsection{Zero-divergence method} \label{Zero-divergence method}
+Here, we remove a second barotropic velocity field $\Vec{V\sub{d}}=\nabla\phi$ from $\Vec{V}^{*}$ such that $\nabla\cdot(\Vec{V}^{*}-\nabla\phi)=0$, so that $\phi$ satisfies the Poisson equation
+
+\begin{equation}
+\nabla^{2}\phi = \nabla\cdot\Vec{V}^{*}.
+\end{equation}
+%
+We solve the above equation by setting a no-flow condition on $\Vec{V\sub{d}}$ everywhere at the solid land and open ocean boundaries except along the southern open ocean boundary. At the southern boundary we set $\phi=0$ there to allow for a net inflow or outflow of $\Vec{V\sub{d}}$ to compensate for the total divergence $\iint\nabla\cdot\Vec{V}^{*}\,dx\,dy$. In order to ensure the impact of that weak artificial flow over the Southern Australia Current System is minimal, we set the open boundary \ang{2} south of our domain, along \ang{50}S. The resulting adjusted geostrophic field $\Vec{v\sub{g}}$ is expressed as
+
+\begin{equation}
+\Vec{v\sub{g}} = \Vec{v\sub{g}^{*}} - \frac{\Vec{V\sub{d}}}{-z\sub{HH}},
+\end{equation}
+%
+where $\nabla\cdot\Vec{V}=\nabla\cdot(\int_{z\sub{HH}}^{0}\Vec{v\sub{g}}\ dz + \Vec{V\sub{ek}})=0$ everywhere including over the continental shelf and slope.
+
 
 
 \section{On the definition of longshore transport} \label{Reasoning for defining the SBC transport and the FC transport from their zonal transport}
@@ -804,7 +822,6 @@ Once the control volumes of the currents are defined, we can use conservation of
 Since the volume budget closes to a high precision, it is evident that the longshore transport across a section can be determined by accumulating the lateral and vertical transports across the faces of the control volume upstream of the section, regardless of the orientation of the section (Fig.2).
 
 \subsection{On using meridional sections rather than normal sections}
-
 The most straightforward orientation of the section is meridional because the section then automatically follows faces of our classical lat-lon gridboxes. Next, we use Fig.\,\ref{slices} to explain the differences between meridional slicings and slicings normal to the coast.
 
 \begin{figure}[hbp]
@@ -814,7 +831,6 @@ The most straightforward orientation of the section is meridional because the se
 \end{figure}
 
 \subsubsection{On the difference between the zonal transport and the longshore transport}
-
 Where the shelf is oriented zonally (Case 1 in Fig.\,\ref{slices}), the meridional slices are normal to the coast. If we were to slice the volume perpendicularly to the slanted coast (Case 2 Fig.\,\ref{slices}), this would result in a situation equivalent to Case 1. In Case 3 of Fig.\,\ref{slices}, meridional slices along the slanted coast (thick black lines) are longer than if they were normal to the coast (thick gray lines). Despite this difference, the volume transports across the two slices can be different only by lateral inflows across the sides of the little triangles formed by these two slices and by the vertical transports across the bottom faces of the triangles as shown below. In Fig.\,\ref{slices} and in the below equation we only consider the lateral inflows for simplicity.
 
 If $\mathcal{\hat{U}}$ is the transport across the meridional slices and $\mathcal{U}$ is the transport across the slices normal to the coast, then
@@ -828,7 +844,6 @@ where $V_{n}$ is the inflow across the north face of the current (Fig.\,\ref{sli
 Hence, for a given meridional slice, some extra flows across the north face equivalent to $V_{n}dl_{n}$ are included in the current transport and some flows across the south face equivalent to $V_{s}dl_{s}$ are not included in the current transport, in comparison to a normal slice. When the current is wider, $dl_n$ and $dl_s$ become accordingly longer and the difference between $\mathcal{U}$ and $\hat{\mathcal{U}}$ tends to be larger (depending on the signs and sizes of $V_n$ and $V_s$).
 
 \subsubsection{On the difference between zonal transport and longshore transport in the South Australian Current System case}
-
 An implication of the above discussion is that, while it is true that volume transports with meridional slices will be different to volume transports with normal slices where the shelf is slanted, the difference between the meridional slicing and the normal slicing will be minimal provided:
 %
 \begin{itemize}
