@@ -220,15 +220,13 @@ To include Ekman drift in the CARS transport budget analysis, we use wind stress
 
 MOM01-75z, which we call MOM01, is a 1/10\dg-resolution ocean model using the MOM5 code \citep{Griffies2012} and providing non-assimilated temperature, salinity and velocity fields gridded over 75 vertical levels \citep{Stewart2017}. Similarly to CARS, these levels are thin near the surface and increase in thickness with increasing depth.
 The model is global and forced by CORE2-NYF, a repeated climatological annual cycle of sea-surface atmospheric forcing with six hourly synoptic variability \citep{Large2009}.
-MOM01 is forced under this cycle for 108 years where we select the last 7 years to produce our equilibrated mean ocean state.
-
-We use the temperature and salinity fields in MOM01 to calculate geostrophic velocity (see Section~\ref{Geostrophic velocity derivation}) to compare with CARS in \ref{Geostrophic velocity validation}. A short discussion of how a MOM01 transport budget derived from geostrophic velocity compares with the same budget derived from actual model velocity is presented in Section\,\ref{Southern Australia Current System Transport Budget}.
+MOM01 is forced under this cycle for 108 years where we select the last 7 years to produce our equilibrated mean ocean state. In Section\,\ref{Southern Australia Current System Transport Budget}, we use the temperature and salinity fields in MOM01 to calculate geostrophic velocity (see Section~\ref{Geostrophic velocity derivation}) and briefly discuss how MOM01 transport budget derived from geostrophic velocity compares with the same budget derived from full model velocity (that is, the actual simulated velocity).
 
 In Section\,\ref{Southern Australia Current System Structure} we find that CARS shows some minor artificial fragmentation in the currents which we briefly discussed above citing \citet{Ridgway2002}. Our high resolution model, however, produces a coherent current system. In addition to this, the prescribed climatological forcing applied to the model results in a numerical simulation of a mean and seasonal cycle that is well suited for comparison with an observational climatology like CARS.
 We note that, similarly to ERA-Interim winds, the winds in CORE2-NYF, which are based on the NCEP reanalysis, are generally stronger than satellite winds from QuikSCAT \citep{Large2009}; although in the Southern Hemisphere, the westerlies are slightly stronger in ERA-Interim, particularly around 50\dg S \citep{Chaudhuri2013}.
 
 \subsection{Geostrophic velocity derivation} \label{Geostrophic velocity derivation}
-The Southern Australia Current System varying flow structures reduce our ability to test different depth levels of no-motion to derive geostrophic velocities. Since the FC can extend as deep as \SI{2000}{\meter} \citep{Middleton2002}, we choose a reference depth of $z\sub{ref} = \SI{-2000}{\meter}$, which is also the depth limit of Argo observations. We note the annual-mean density field in CARS and MOM01 agree reasonably well everywhere, except near Albany where CARS shows lighter surface densities (\ref{Annual-mean density field validation}), which would result in a higher Albany High and a locally stronger FC in CARS (\ref{Velocity field validation}).
+The Southern Australia Current System varying flow structures reduce our ability to test different depth levels of no-motion to derive geostrophic velocities. Since the FC can extend as deep as \SI{2000}{\meter} \citep{Middleton2002}, we choose a reference depth of $z\sub{ref} = \SI{-2000}{\meter}$, which is also the depth limit of Argo observations. We note the annual-mean density field in CARS and MOM01 agree reasonably well everywhere, except near Albany where CARS shows lighter surface densities (not shown), which would result in a higher Albany High and a locally stronger FC in CARS.
 
 To compute geostrophic velocities in regions shallower than the reference depth, we apply the Helland-Hansen method \citep{Helland-Hansen1934,Fomin1964}. This method states velocities at the bottom of a land portion shallower than the reference depth are zero. This method and Ekman drift calculation are set out in \ref{Helland-Hansen method}. A drawback of the Helland-Hansen method is that it produces unphysical vertical flows across the sea bottom over the margin, which introduces error in three-dimensional transport budgets. To eliminate this deficiency, and obtain a three-dimensional transport budget that closes to computer precision, we apply the Zero-Divergence method described in \citet{Furue2017} and here in \ref{Zero-divergence method}.
 
@@ -243,7 +241,7 @@ We first inspect meridional sections at the locations shown in Fig.\,\ref{f01_fi
 [width=\textwidth, height=0.89\textheight, keepaspectratio]
 {f02_fig1_.png}
 \caption{\label{f02_fig1_}%
-  Meridional sections along southern Australia of (a-h) geostrophic velocities in CARS and (i-p) actual velocities in MOM01. Zonal geostrophic velocities $u\sub{g}$ in CARS (actual zonal velocities in MOM01) in \si{\centi\meter\per\second} (shadings, non-monotonic scale) and meridional geostrophic velocities $v\sub{g}$ in CARS (actual meridional velocities in MOM01) in \si{\centi\meter\per\second} (contours, every \SI{2.5}{\centi\meter\per\second}, thick solid lines show positive values, thick dashed lines show negative values, thin solid lines show zero contour). Boundaries of the SBC and FC as follows: $y\sub{CC}$ (green) is the SBC north boundary; $z\sub{int}$ (blue) is the SBC bottom boundary and the FC top boundary; $y\sub{int}$ (red) is the SBC south boundary and the FC north boundary; $y\sub{OF}$ (magenta) is the FC south boundary; $z\sub{ref}$ (thick cyan) is the FC bottom closed boundary at the reference depth.}
+  Meridional sections along southern Australia of (a-h) geostrophic velocities in CARS and (i-p) full velocities in MOM01. Zonal geostrophic velocities $u\sub{g}$ in CARS (full zonal velocities in MOM01) in \si{\centi\meter\per\second} (shadings, non-monotonic scale) and meridional geostrophic velocities $v\sub{g}$ in CARS (full meridional velocities in MOM01) in \si{\centi\meter\per\second} (contours, every \SI{2.5}{\centi\meter\per\second}, thick solid lines show positive values, thick dashed lines show negative values, thin solid lines show zero contour). Boundaries of the SBC and FC as follows: $y\sub{CC}$ (green) is the SBC north boundary; $z\sub{int}$ (blue) is the SBC bottom boundary and the FC top boundary; $y\sub{int}$ (red) is the SBC south boundary and the FC north boundary; $y\sub{OF}$ (magenta) is the FC south boundary; $z\sub{ref}$ (thick cyan) is the FC bottom closed boundary at the reference depth.}
 \end{figure}
 
 While the SBC are relatively narrow, thin and well contained along the shelf break, the FC is wider and thicker, with a varying core position. We define here an \enquote{offshore-FC}
@@ -259,7 +257,7 @@ Hence, the SBC and FC volumes can be defined by separating the water column into
 \Vec{V\sub{low}}(x,y) = \int_{z\sub{ref}}^{z\sub{int}}\Vec{v\sub{g}}\ dz.
 \end{equation}
 %
-These depth integrated velocity fields produce transports per unit width in \si{\square\meter\per\second}. Note that $\Vec{V\sub{up}}$ and $\Vec{V\sub{low}}$ from MOM01 are shown in Fig.\,\ref{f03_fig1_}c,d. In this case we simply used actual model velocity integrated in the upper and lower layers, rather than the sum of geostrophic and Ekman velocities. A comparison of MOM01 actual velocity with MOM01 geostrophic and Ekman velocity shows that the SBC and FC actual model velocities are generally stronger than the sum of the geostrophic and Ekman velocities (\ref{Geostrophic velocity validation}). Therefore the MOM01 actual SBC and FC transport will be stronger than MOM01 geostrophic transport (see Section\,\ref{Southern Australia Current System Transport Budget}).
+These depth integrated velocity fields produce transports per unit width in \si{\square\meter\per\second}. Note that $\Vec{V\sub{up}}$ and $\Vec{V\sub{low}}$ from MOM01 are shown in Fig.\,\ref{f03_fig1_}c,d. In this case we simply used full model velocity integrated in the upper and lower layers, rather than the sum of geostrophic and Ekman velocities. In MOM01, the full model velocities in the SBC and FC are generally stronger than the sum of geostrophic and Ekman velocities (not shown). Therefore the MOM01 full SBC and FC transport will be stronger than MOM01 geostrophic transport (see Section\,\ref{Southern Australia Current System Transport Budget}).
 %
 \begin{figure}[p]
 \centering
@@ -267,7 +265,7 @@ These depth integrated velocity fields produce transports per unit width in \si{
 [width=\textwidth, height=0.92\textheight, keepaspectratio]
 {f03_fig1_.png}
 \caption{\label{f03_fig1_}%
-  Depth integrated (a,b) geostrophic velocities in CARS and (c,d) actual velocities in MOM01, showing the velocity field (directional plot) and the zonal component (shadings, non-monotonic scale) in \si{\square\meter\per\second} (ie. transport per unit width). The fields are integrated from (a,c) the surface to \SI{-250}{\meter} and from (b,d) \SI{-250}{\meter} to \SI{-2000}{\meter}. In CARS, (a) shows the sum of geostrophic velocities and Ekman velocities and (b) shows geostrophic velocities only. Boundaries of the SBC and FC as follows: $y\sub{CC}$ (green with black outline) is the SBC north boundary; $y\sub{int}$ (red with black outline) is the SBC south boundary and the FC north boundary; $y\sub{OF}$ (magenta with black outline) is the FC south boundary; $z\sub{int}$ area is the surface bounded by $y\sub{int}$ at south and the slope at north.}
+  Depth integrated (a,b) geostrophic velocities in CARS and (c,d) full velocities in MOM01, showing the velocity field (directional plot) and the zonal component (shadings, non-monotonic scale) in \si{\square\meter\per\second} (ie. transport per unit width). The fields are integrated from (a,c) the surface to \SI{-250}{\meter} and from (b,d) \SI{-250}{\meter} to \SI{-2000}{\meter}. In CARS, (a) shows the sum of geostrophic velocities and Ekman velocities and (b) shows geostrophic velocities only. Boundaries of the SBC and FC as follows: $y\sub{CC}$ (green with black outline) is the SBC north boundary; $y\sub{int}$ (red with black outline) is the SBC south boundary and the FC north boundary; $y\sub{OF}$ (magenta with black outline) is the FC south boundary; $z\sub{int}$ area is the surface bounded by $y\sub{int}$ at south and the slope at north.}
 \end{figure}
 
 We present in Fig.\,\ref{Diagram_V3} a Southern Australia Current System three-dimensional schematic diagram to understand transport budget exchanges. This schematic illustrates the SBC eastward transport ($U_{SBC}$ thick light blue arrow) and FC westward transport ($U_{FC}$ thick light yellow arrows), which includes the slope-FC below the SBC, and the offshore-FC upper and lower parts. Inward/outward transports into or out of the SBC or FC are indicated as thin coloured arrows. Here, an increase in SBC transport can be supplied from three sources: southward coastal currents inflows ($V_{CC}$ thin green arrows), northward upper offshore-FC inflows ($V_{SBC}$ thin red arrows), and slope-FC upwelling flows ($W_{SBC}$ thin blue arrows). Similarly, an increase in FC transport can be supplied by three sources: southward SBC inflows into the upper offshore-FC ($V_{FC}$ thin red arrows), SBC downwelling flows into the slope-FC ($W_{FC}$ thin blue arrows), northward ocean interior onshore flows into the offshore-FC ($V_{OF}$ thin magenta arrows).
@@ -286,22 +284,21 @@ The SBC and FC control volume boundaries are shown in meridional sections of vel
 We note MOM01 shows continuous SBC well incorporated into the SBC control volume (Fig.\,\ref{f03_fig1_}c). Even though CARS is a long-term climatology, it still includes some coastal eddy-like ``noise'' in the region (Fig.\,\ref{f03_fig1_}a), which is likely due to the superposition of eddies recorded at different times. Recently, \citet{Oke2018} found that the Great Australian Bight is rich in mesoscale eddies with surface-intensified currents coherent over the water column. The eddies, which are hypothetically due to the horizontal shear associated with the SBC, are most energetic when the SBC seasonally weaken. In MOM01, the eddies synoptic structure, particularly in the Leeuwin Current Extension region, is evident on transient timescales (not shown). Defining fixed boundaries around the SBC is, however, adequate, because the long-term mean boundary circulation is mostly dominated by geostrophic flows. The SBC's jet like shape is maintained by southward propagating pressure anomalies from the Leeuwin Current System. These pressure anomalies turn eastward along southern Australia \citep{Middleton2007, Ridgway2015}. In winter, the currents are reinforced due to westerly winds intensification and increased onshore Ekman drift \citep{Ridgway2004}. In our fixed boundary SBC definition, any eddies and eddy-like meandering flows crossing a boundary will be captured as an inflow or outflow into the currents. \citet{Furue2017} also applied fixed boundaries for the Leeuwin Current System, because the Leeuwin Current, which co-exists with eddies, is also a jet-like flow.
 
 \subsection{Transport budget derivation} \label{Transport budget derivation}
-We calculate the local zonal transport within these volumes,
-which we refer to as the SBC or FC transport, and the inward/outward transport across all volume boundaries which we refer to as the cross-boundary transport. The SBC transports include both geostrophic and Ekman drifts. The FC transports include geostrophic and Ekman drift in the upper layer south of the SBC, and only geostrophic transports in the lower layer (slope-FC and offshore-FC).
-We carry out the same calculations on the full (total) velocity from MOM01.
-Below, we provide identities for SBC and FC that connect their longshore transports to cross-boundary exchanges. The following equations represent a transport in volume per unit time in Sverdrups (\si{Sv},  \SI[parse-numbers=false]{10^6}{\cubic\meter\per\second}).
+We calculate the local zonal transport within the SBC and FC volumes,
+which we refer to as SBC and FC transport. The in/outward transport across volume boundaries is referred to as cross-boundary transport. As a reminder, in CARS, the SBC transport includes geostrophic flow and Ekman drift. The FC transport includes geostrophic flow and Ekman drift in the upper layer, and geostrophic flow only in the lower layer. In MOM01, we carry out the same calculations and also estimate transports from full velocity.
+Below, we provide identities for SBC and FC that connect their transport to cross-boundary transports. The following equations represent a transport in volume per unit time in Sverdrups (\si{Sv},  \SI[parse-numbers=false]{10^6}{\cubic\meter\per\second}).
 
-We choose to use Cartesian coordinates, rather than coast-following, because the currents are narrow (particularly the SBC) and it is difficult to define a coast-following coordinate system that allows mass to be conserved in the transport calculation. Our approach assures mass conservation through careful selection of the grid cells in the transport budget, and capturing of all flow into and out of each cell. \ref{Reasoning for defining the SBC transport and the FC transport from their zonal transport} explains our reasoning for choosing cartesian coordinates over coast-following ones.
+We choose to use Cartesian coordinates, rather than coast-following, because the currents are narrow and it is difficult to define a coast-following coordinate system that allows mass to be conserved in transport calculations. Our approach ensures mass conservation through careful selection of grid cells in the transport budget, and capturing of all flow into and out of each cell. \ref{Reasoning for defining the SBC transport and the FC transport from their zonal transport} explains our reasoning for choosing Cartesian coordinates over coast-following ones.
 
-We first present the longshore and cross-boundary equations for the SBC\@. The following transport equations are indicated in Fig.\,\ref{Diagram_V3}. When we refer to the transport of a current (e.g. SBC), this is the full longshore transport carried by the current. Cross-shore exchanges are captured by the cross-boundary transports. For the SBC, the longshore and cross-shore transports are defined as follows. The SBC transport $\mathcal{U}\sub{SBC}$ is 
+We first present the SBC transport and cross-boundary transport equations. The following transport equations are indicated in Fig.\,\ref{Diagram_V3}. The SBC transport $\mathcal{U}\sub{SBC}$ is 
 
 \begin{equation} \label{eq:3}
 \mathcal{U}\sub{SBC}(x) = \int_{y\sub{int}(x)}^{y\sub{CC}(x)}{U}\sub{up}\ dy,
 \end{equation}
 %
-where $U\sub{up}$ is defined by (6). Hence $\mathcal{U}\sub{SBC}$ represents the transport between $y\sub{int}$ and $y\sub{CC}$. 
+where $y\sub{int}$ is the SBC south boundary (Fig.\ref{f03_fig1_}a), $y\sub{CC}$ is the SBC north boundary (Fig.\ref{f03_fig1_}a) and $U\sub{up}$ is the zonal velocity component of (\ref{eq:1}). Hence $\mathcal{U}\sub{SBC}$ represents the upper layer zonal transport bounded by $y\sub{int}$ and $y\sub{CC}$, where positive means an eastward SBC transport. 
 
-The cumulative horizontal cross-boundary transports into the SBC are 
+The cross-boundary transport from coastal currents and from the offshore-FC into the SBC are 
 
 \begin{equation} \label{eq:4}
 \mathcal{V}\sub{CC}(x) = \int_{x\sub{west}}^{x}\Vec{n}\sub{CC}\cdot\Vec{V}\sub{up}\ dl\sub{CC},
@@ -311,36 +308,36 @@ The cumulative horizontal cross-boundary transports into the SBC are
 \mathcal{V}\sub{SBC}(x) = \int_{x\sub{west}}^{x}\Vec{n}\sub{int}\cdot\Vec{V}\sub{up}\ dl\sub{int},
 \end{equation}
 %
-where $x\sub{west}$ = \ang{115}E is the longitude at the western edge of the SBC, $dl\sub{CC}$ and $dl\sub{int}$ are the line elements of the curves $y\sub{CC}$ and $y\sub{int}$, respectively, from $x\sub{west}$ to $x$ and $\Vec{n}$ is a unit vector perpendicular to $dl$ and pointing into the SBC\@.
-$\mathcal{V}\sub{CC}$ and $\mathcal{V}\sub{SBC}$ hence represent the horizontal cross-boundary transport across $y\sub{CC}$ (from the coastal currents into the SBC) and $y\sub{int}$ (from the offshore-FC into the SBC),respectively, accumulated from $x\sub{west}$ to $x$. Positive transport values are defined to be directed into the SBC volume.
+where $x\sub{west}$ = \ang{115}E is the SBC western edge longitude, $dl\sub{CC}$ and $dl\sub{int}$ are the line elements of the curves $y\sub{CC}$ and $y\sub{int}$, respectively, from $x\sub{west}$ to $x$, and $\Vec{n}$ is a unit vector perpendicular to $dl$ and pointing into the SBC\@.
+$\mathcal{V}\sub{CC}$ and $\mathcal{V}\sub{SBC}$ hence represent the horizontal cross-boundary transport, accumulated from $x\sub{west}$ to $x$, across $y\sub{CC}$ (from coastal currents into the SBC) and $y\sub{int}$ (from offshore-FC into the SBC), respectively. Here, since the transport is accumulated from west to east, positive means a net inflow into the SBC.
 
-The vertical cross-boundary transport into the SBC is defined as
+The cross-boundary transport from the slope-FC into the SBC is defined as
 
 \begin{equation} \label{eq:6}
 \mathcal{W}\sub{SBC}(x)
 = \int_{x\sub{west}}^{x} \int_{y\sub{int}(x)}^{y\sub{CC}(x)} \nabla\cdot\Vec{V}\sub{up}\ dy\ dx.
 \end{equation}
 %
-Hence $\mathcal{W}\sub{SBC}$ represents the vertical cross-boundary transport across $z\sub{int}$, from the slope-FC into the SBC (positive upwards), accumulated from $x\sub{west}$ to $x$.
+where $y\sub{int}$ is the SBC bottom boundary (Fig.\ref{f02_fig1_}c). Hence $\mathcal{W}\sub{SBC}$ represents the vertical cross-boundary transport, accumulated from $x\sub{west}$ to $x$, across $z\sub{int}$ (from the slope-FC into the SBC). In this accumulated transport, positive means a net upwelling flow into the SBC.
 
-We now define the longshore and cross-boundary equations for the FC\@. The FC transport $\mathcal{U}\sub{FC}$ is 
+We now describe the FC transport and cross-boundary transport equations. The FC transport $\mathcal{U}\sub{FC}$ is 
 
 \begin{equation} \label{eq:7}
 \mathcal{U}\sub{FC}(x) = \int_{y\sub{OF}(x)}^{y\sub{int}(x)}{U}\sub{up}\ dy
 + \int_{y\sub{OF}(x)}^{y\sub{slope}(x)}{U}\sub{low}\ dy,
 \end{equation}
 %
-where $U\sub{low}$ is defined by (7) and $y\sub{slope}$ is the latitude of the slope at $z\sub{int}$. $\mathcal{U}\sub{FC}$ hence represents the sum of the offshore-FC transport in the upper layer (integrated between $y\sub{OF}$ and $y\sub{int}$) and the FC transport in the lower layer (integrated between $y\sub{OF}$ and the slope). The lower layer FC transport includes both the lower layer of the offshore-FC and the slope-FC.
+where $y\sub{OF}$ is the FC south boundary (Fig.\ref{f03_fig1_}a), $y\sub{slope}$ is the slope (north) boundary at $z\sub{int}$, and $U\sub{low}$ is the zonal velocity component of (\ref{eq:2}). Hence $\mathcal{U}\sub{FC}$ represents the zonal transport bounded by $y\sub{OF}$ and $y\sub{int}$ in the upper layer (i.e. the near-surface offshore-FC) and by $y\sub{OF}$ and the slope in the lower layer (i.e. the slope-FC and the deep offshore-FC); where positive means an eastward FC transport.
 
-The horizontal cross-boundary transport across $y\sub{OF}$, representing the input into the offshore-FC from the ocean interior, is defined as
+The cross-boundary transport from South Australian Basin onshore flows, representing inputs from the ocean interior, is defined as
 
 \begin{equation} \label{eq:8}
 \mathcal{V}\sub{OF}(x) = \int_{x}^{x\sub{east}}\Vec{n}\sub{OF}\cdot(\Vec{V}\sub{up} + \Vec{V}\sub{low})\ dl\sub{OF},
 \end{equation}
 %
-where $x\sub{east}$ = \ang{147} is the longitude at the eastern edge of the FC, $dl\sub{OF}$ is the line element of $y\sub{OF}$ from $x$ to $x\sub{east}$ and $\Vec{n}$ is a unit vector perpendicular to $dl$ and pointing into the FC\@. $\mathcal{V}\sub{OF}$ thus represents the upper- and lower-layer horizontal cross-boundary transport across $y\sub{OF}$ into the FC (positive into the FC) accumulated from $x$ to $x\sub{east}$. 
+where $x\sub{east}$ = \ang{147} is the FC eastern edge longitude, $dl\sub{OF}$ is the line element of $y\sub{OF}$ from $x$ to $x\sub{east}$ and $\Vec{n}$ is a unit vector perpendicular to $dl$ and pointing into the FC\@. $\mathcal{V}\sub{OF}$ thus represents the horizontal cross-boundary transport, accumulated from $x$ to $x\sub{east}$, across $y\sub{OF}$ into the FC. Since this transport is accumulated from west to east, positive is a net input from onshore flows into the FC.
 
-The other cross-boundary transports into the FC across $y\sub{int}$ and $z\sub{int}$ are equal and opposite to the corresponding cross-boundary transports of the SBC (ie. $\mathcal{V}\sub{SBC}$ and $\mathcal{W}\sub{SBC}$, respectively) and are accumulated in the opposite direction, from east to west. Hence
+The other cross-boundary transports into the FC across $y\sub{int}$ and $z\sub{int}$ are equal and opposite to the corresponding SBC cross-boundary transports (ie. $\mathcal{V}\sub{SBC}$ and $\mathcal{W}\sub{SBC}$, respectively). Hence
 
 \begin{equation} \label{eq:9}
 \mathcal{V}\sub{FC}(x) = \int_{x}^{x\sub{east}}-\Vec{n}\sub{int}\cdot\Vec{V}\sub{up}\ dl\sub{int},
@@ -350,10 +347,9 @@ The other cross-boundary transports into the FC across $y\sub{int}$ and $z\sub{i
 \mathcal{W}\sub{FC}(x) = \int_{x}^{x\sub{east}} \int_{y\sub{int}(x)}^{y\sub{CC}(x)} -\nabla\cdot\Vec{V}\sub{up}\ dy\ dx,
 \end{equation}
 %
-where $\mathcal{V}\sub{FC}$ and $\mathcal{W}\sub{FC}$ represent the cross-boundary transports into the FC accumulated from $x$ to $x\sub{east}$ across $y\sub{int}$ (positive out of the SBC) and across $z\sub{int}$ (positive downwards, out of the SBC), respectively.
+where $\mathcal{V}\sub{FC}$ and $\mathcal{W}\sub{FC}$ represent the cross-boundary transports, accumulated from $x$ to $x\sub{east}$, across $y\sub{int}$ (positive is a net horizontal SBC input) and across $z\sub{int}$ (positive is a net downwelling input from the SBC), respectively.
 
-Finally, since both
-the adjusted geostrophic plus Ekman velocities and MOM01's full velocities are mass conserving, the transports $\mathcal{U}\sub{SBC}$ and $\mathcal{U}\sub{FC}$ can also be obtained by using the Continuity equation and interpreting all the cumulative transport terms as sources and sinks. Hence,
+Finally, since the geostrophic and Ekman velocities (readjusted via the Zero-divergence method, \ref{Zero-divergence method}) and MOM01 full velocities are mass conserving, the SBC transport $\mathcal{U}\sub{SBC}$ and FC transport $\mathcal{U}\sub{FC}$ can also be obtained from the Continuity equation by interpreting the cumulative transport terms (i.e. the cross-boundary transports) as sources and sinks. Hence,
 
 \begin{equation} \label{eq:11}
 \mathcal{U}\sub{SBC}(x) = \mathcal{U}\sub{SBC}(x\sub{west}) + \mathcal{V}\sub{CC}(x) + \mathcal{V}\sub{SBC}(x) + \mathcal{W}\sub{SBC}(x).
@@ -363,22 +359,16 @@ the adjusted geostrophic plus Ekman velocities and MOM01's full velocities are m
 -\mathcal{U}\sub{FC}(x) = -\mathcal{U}\sub{FC}(x\sub{east}) + \mathcal{V}\sub{FC}(x) + \mathcal{V}\sub{OF}(x) + \mathcal{W}\sub{FC}(x).
 \end{equation}
 %
-We note that in equation (17), there is a negative sign in front of $\mathcal{U}\sub{FC}(x)$ because the FC transport is westward (hence negative). We calculate the terms using definitions (8)--(15)
-and verify that the above equalities are satisfied at
-very high accuracy (see Fig.\,\ref{Slide1_2}).
+Note that in equation \ref{eq:12}, there is a negative sign in front of $\mathcal{U}\sub{FC}(x)$ because the FC transport is westward, that is in the negative direction, therefore its sign is changed so that inputs into the current (i.e. positive cross-boundary cumulative terms) are translated into a stronger FC. We calculate all transport terms using definitions \ref{eq:3}--\ref{eq:10} and verify that the above equalities are satisfied at very high accuracy. This test is shown in \ref{leak-free}.
 
 \section{Results and Discussion} \label{Results and Discussion}
-This section is divided into three subsections. Firstly, we examine the annual-mean three-dimensional structure of the major currents of the Southern Australia Current System (Section~\ref{Southern Australia Current System Structure}). Secondly we analyse the transport budget from the annual-mean current transport and cross-boundary transport of the SBC and the FC (Section~\ref{Southern Australia Current System Transport Budget}). Finally, a discussion of the SBC--FC coupling in the annual-mean and in summer and autumn is presented (Section~\ref{SBC and FC coupling}).
+This section is divided into three subsections. Firstly, we describe the Southern Australia Current System annual-mean, three-dimensional structure (Section~\ref{Southern Australia Current System Structure}). Secondly, we analyse the system transport budget (Section~\ref{Southern Australia Current System Transport Budget}). Finally, we discuss the annual-mean SBC--FC coupling and present an overview of the summer and autumn states (Section~\ref{SBC and FC coupling}).
 
 \subsection{Southern Australia Current System Structure} \label{Southern Australia Current System Structure}
-We first inspect meridional sections of mean zonal and meridional velocities in CARS and MOM01 and compare our results with those reported in the literature (Section~\ref{Shelf meridional sections}). We then describe the system from maps of depth integrated velocities in the upper layer (SBC and upper FC) and lower layer (lower FC, Section~\ref{Depth-integrated velocity maps}). Finally we examine the upper slope vertical flows between the SBC and the slope-FC (Section~\ref{Vertical flows in MOM01}).
+To describe the system structure, we identify the main current features in velocity sections (Section~\ref{Shelf meridional sections}) and in depth integrated velocity maps (Section~\ref{Depth-integrated velocity maps}). In these two subsections we provide enhanced confidence in our findings by comparing the observation-based product CARS with the model data from MOM01. Finally, we examine vertical flows over the shelf MOM01 (Section~\ref{Vertical flows in MOM01}).
 
 \subsubsection{Shelf meridional sections}\label{Shelf meridional sections}
-In the cross-sections, the structure and speed of the Leeuwin Current Extension, the western SBC flow in the Cape Leeuwin and Cape Pasley sections, is generally in good agreement between CARS (Fig.\,\ref{f02_fig1_}a,b) and MOM01 (Fig.\,\ref{f02_fig1_}i,j). The current shrinks and weakens moving east and flows over the shelf break between the surface and \SI{250}{\meter} which agrees well with estimates from \citet{Cresswell2004} and \citet{Cresswell1993}. They reported instantaneous speed records up to \num{50} and \SI{100}{\centi\meter\per\second} which is in good agreement with MOM01 which showed 5-days average Leeuwin Current Extension speed greater than \SI{50}{\centi\meter\per\second} in autumn (not shown).
-
-The South Australian Current, the central SBC flow in the Great Australian Bight and Cape Carnot sections, weakens as it flows eastward across the Bight in CARS (Fig.\,\ref{f02_fig1_}c,d) and reverses to become a south-westward flow off Cape Carnot (Fig.\,\ref{f02_fig1_}e). In MOM01, it is a weak and constant eastward current (Fig.\,\ref{f02_fig1_}k-m). The South Australian Current has a maximum speed of \SI{10}{\centi\meter\per\second} off the west Bight section in CARS, a mean speed of \SI{3}{\centi\meter\per\second} in MOM01 and an average depth of \SI{250}{\meter} in both. \citet{Middleton2007} reported a South Australian Current depth of \SI{200}{\meter} and instantaneous speed up to \SI{50}{\centi\meter\per\second} which is in reasonable agreement with our results from MOM01 (5-days average South Australian Current speed greater than \SI{50}{\centi\meter\per\second}).
-
-In both MOM01 and CARS, the Zeehan Current is a strengthening south-eastward flow from Portland to King Island (Fig.\,\ref{f02_fig1_}f,g,n,o) and a due eastward flow off South East Cape (Fig.\,\ref{f02_fig1_}h,p). However, the Zeehan Current in CARS is large with a maximum speed of \SI{20}{\centi\meter\per\second} which is much stronger than the flow in MOM01 (\SI{<10}{\centi\meter\per\second}). The CARS and MOM01 annual mean speeds are, not unexpectedly, weaker than instantaneous observations \citep{Ridgway2007} which find the Zeehan Current to have current speeds up to (\SI{40}{\centi\meter\per\second}) reaching to \SI{300}{\meter} depth.
+From Cape Leeuwin to Pasley (the two westernmost sections, Fig.\,\ref{f02_fig1_}a,b,i,j), the Leeuwin Current Extension weakens in both CARS and MOM01. Estimates from \citet{Cresswell2004} and \citet{Cresswell1993} also show a stronger Leeuwin Current Extension and more intense eddies near Cape Leeuwin. From the west Great Australian Bight through to King Island (the following five sections, Fig.\,\ref{f02_fig1_}c-g,k-o), the South Australian Current and the Zeehan Current are generally weaker in CARS and MOM01. MOM01 helps identify the current structure in some sections where it is not represented in CARS (e.g. Cape Carnot and Portland sections). Not much is know on the South Australian Current, apart that it is weaker than the Leeuwin Current Extension \citep{Middleton2007} and that it is altered by coastal runoff from the Bight \citep{Rochford1986}. Off South East Cape (easternmost section, Fig.\,\ref{f02_fig1_}h,p), the Zeehan Current intensifies in CARS and MOM01, which is consistent with \citet{Oliver2016,Oliver2018b} who found a strong current there continuing over the eastern Tasmanian shelf.
 
 Near South East Cape the FC includes the strong Tasman Leakage, seen as shown the deep-reaching, wide and strong south-westward current in Fig.\,\ref{f02_fig1_}h,p.
 The FC reaches westward speeds over \SI{10}{\centi\meter\per\second} with a surface maximum in CARS (Fig.\,\ref{f02_fig1_}h) and most of the flow in the offshore-FC, and a subsurface maximum in MOM01 centered at \SI{600}{\meter} depth (Fig.\,\ref{f02_fig1_}p) with much of the flow in the slope-FC\@. As noted in Methodology Section~\ref{SBC and FC definition} there is a flow structure distinction between the offshore-FC and the slope-FC which we analyse here.
@@ -392,12 +382,17 @@ The zonal FC, along the zonal coast of the western Great Australian Bight, Cape 
 In MOM01, this vertically coherent eastward jet is the southern arm of the anti-cyclonic Albany High (\citeauthor{Middleton2003} \citeyear{Middleton2003}, \citeauthor{Middleton2007} \citeyear{Middleton2007}, \citeauthor{McCartney2007} \citeyear{McCartney2007}, see Introduction Section~\ref{The Deep-Ocean Circulation}) clearly visible off Cape Leeuwin and Cape Pasley (Fig.\,\ref{f02_fig1_}i,j) and also near the surface in the Bight sections (Fig.\,\ref{f02_fig1_}k,l).
 The CARS field also includes this eastward flow (Fig.\,\ref{f02_fig1_}b) although it is somewhat less coherent (Figs.\,\ref{f03_fig1_}a and~\ref{f03_fig1_}b) and interspersed with regions of westward flow.
 
+
+Overall, the SBC are strongest at the western and eastern domain ends (Cape Leeuwin and South East Cape) where they reach mean speed up to \SI{20}{\centi\meter\per\second}. The general agreement between CARS and MOM01 suggests that the interpolation method in CARS is suitable to analyse narrow boundary currents at high-resolution. The present CARS should be analysed in combination with a high resolution model
+
+
 To summarise this analysis, our sections of annual-mean CARS and MOM1 were generally in good agreement except for some notable differences. In our selected sections, the mean SBC are continuously eastward in MOM01 whereas the South Australian Current reversed at Cape Carnot in CARS. The annual-mean SBC were weaker in the model than in the observations but the 5-days average MOM01 SBC agreed well with instantaneous measurements reported in the literature. Our choice of $z\sub{int} =$ -250\si{\meter} to define the bottom of the SBC was well suited to the current structure in the CARS and MOM01 fields, and was within the \num{200} to \SI{300}{\meter} range reported in the literature.
 The maximum mean speed of the SBC is about
 \SI{20}{\centi\meter\per\second} and
 the SBC strength varies moving eastward: the Leeuwin Current Extension decreases, the South Australian Current is stable, and the Zeehan Current increases.
 The FC's slope and offshore components are
 found both in CARS and MOM01. Along the slanted coast, the slope-FC is centered around \SI{600}{\meter} and there is no, or a very weak, offshore-FC in MOM01, while CARS has both FC components and the slope-FC is surface intensified. In both datasets, the offshore-FC and the slope-FC co-exist along the zonal coast. In general, the FC increases to the west gaining in size and intensity, except off Cape Leeuwin in CARS where it splits offshore and weakens. In CARS and particularly in MOM01, a deep-reaching eastward jet exists south of the FC in the zonal sector.
+
 
 \subsubsection{Depth-integrated velocity maps}\label{Depth-integrated velocity maps}
 Maps of depth-integrated velocity allow the horizontal structure of the currents to be examined (Fig.\,\ref{f03_fig1_}). In CARS, the eastward flow of the SBC is interrupted by reversals, notably near Albany, between Cape Carnot and Cape Jaffa, and west of Tasmania (Fig.\,\ref{f03_fig1_}a). In MOM01, on the other hand, the SBC flow continuously eastward (Fig.\,\ref{f03_fig1_}c). Overall, the SBCs' magnitude and width agree well between the CARS and MOM01.
@@ -478,7 +473,7 @@ We recall that the sign convention for the zonal transports (Eq.\,\ref{eq:3} and
 \subsubsection{SBC budget}\label{SBC budget}
 The SBC transport $\mathcal{U}\sub{SBC}$ (Eq.\,\ref{eq:3}, Fig.\,\ref{f04_fig1_}a black lines) exhibits significantly higher variations in CARS than in MOM01, particularly in the Leeuwin Current Extension (see also Fig.\,\ref{f03_fig1_}).
 High variations are probably due to the mean CARS data being locally biased towards particular transient, seasonal or inter-annual events. Nonetheless, the trend of the South Australian Current and the Zeehan Current transport in CARS
-roughly agrees with those in MOM01. It is worth noting here that in MOM01, the transport adjusted via the Zero Divergence method (i.e., Ekman plus geostrophic transport from the Zero Divergence method applied to the model's temperature and salinity field and wind data) agrees very well with the actual transport determined from the model's full velocity field. In the actual MOM01 transport, the Leeuwin Current Extension decreases from $\mathcal{U}\sub{SBC} =$ \num{1.1} to about \SI{0.1}{Sv}, the South Australian Current fluctuates with the transport across the zonal shelf remaining stable and that across the the slanted shelf increasing to \SI{0.3}{Sv}, and the Zeehan Current slightly increasing to about \SI{0.4}{Sv} (Fig.\,\ref{SACS_complex}).
+roughly agrees with those in MOM01. It is worth noting here that in MOM01, the transport adjusted via the Zero Divergence method (i.e., Ekman plus geostrophic transport from the Zero Divergence method applied to the model's temperature and salinity field and wind data) agrees very well with the full transport determined from the model's full velocity field. In the full MOM01 transport, the Leeuwin Current Extension decreases from $\mathcal{U}\sub{SBC} =$ \num{1.1} to about \SI{0.1}{Sv}, the South Australian Current fluctuates with the transport across the zonal shelf remaining stable and that across the the slanted shelf increasing to \SI{0.3}{Sv}, and the Zeehan Current slightly increasing to about \SI{0.4}{Sv} (Fig.\,\ref{SACS_complex}).
 %
 \begin{figure}[p]
 \noindent\includegraphics
@@ -738,19 +733,6 @@ PS was supported by an Australian Research Council (ARC) DECRA Fellowship DE1501
 \appendix
 \setcounter{figure}{0}
 
-\section{MOM01 validation with CARS} \label{MOM01 validation with CARS}
-\subsection{Geostrophic velocity field validation} \label{Geostrophic velocity validation}
-ddd
-
-\subsection{Surface density field validation} \label{Annual-mean density field validation}
-ddd
-
-\subsection{Velocity field validation} \label{Velocity field validation}
-ddd
-
-\subsection{Velocity sections validation} \label{Velocity sections validation}
-ddd
-
 \section{Geostrophic velocity derivation} \label{Geostrophic velocity derivation appendix}
 \subsection{Helland-Hansen method and Ekman drift calculation} \label{Helland-Hansen method}
 To compute geostrophic velocities in regions shallower than the reference depth, we apply the Helland-Hansen method \citep{Helland-Hansen1934,Fomin1964}. This method states velocities at the bottom of a land portion shallower than the reference depth are zero. We first compute geostrophic velocities referenced to the surface and then remove a vertically-uniform velocity field that cancels out the geostrophic velocities at the reference depth in the ocean interior or at the sea bottom over the margin; hence
@@ -799,11 +781,10 @@ Since the shelf orientation varies, we increase the distance between the SBC's n
 We remove $y\sub{CC}$ where the shallow shelf is narrow and the coastal currents are insignificant, that is anywhere outside the Great Australian Bight, the Bass Strait, the Gulfs region north of Cape Jaffa. Finally, we define the FC's southern boundary $y\sub{OF}$ by following the \SIadj{2000}{\meter} isobath. West of Portland $y\sub{OF}$ is set to be 3/2\dg~south of this isobath. Elsewhere, it is set to be 7/4\dg~south. South of Tasmania, the boundary is manually adjusted to lie at \ang{45.5}S.
 The green, red and magenta curves in Fig.\,\ref{f03_fig1_} are $y\sub{CC}$, $y\sub{int}$ and $y\sub{OF}$ as defined above.
 
-
 \section{On the definition of longshore transport} \label{Reasoning for defining the SBC transport and the FC transport from their zonal transport}
 This appendix discusses the definition of the transport for a longshore current. In the main text, we integrate zonal velocity instead of longshore velocity to define the transport of the SBC or FC (Section\,\ref{Transport budget derivation}) Here we explain why our volume-conserving approach is the best method to use.
 
-\subsection{On using gridboxes to construct the control volume for leak-free calculations}
+\subsection{On using gridboxes to construct the control volume for leak-free calculations} \label{leak-free}
 The central part of this study is to develop a transport budget for the Southern Australia Current System. To do this, it is essential that the currents are captured by control volumes with horizontal and vertical boundaries that fully enclose the currents. Details of this are provided in Section\,\ref{SBC and FC definition}.
 
 Once the control volumes of the currents are defined, we can use conservation of mass to derive the transports of the longshore current by adding all the horizontal and vertical transports across the faces of the control volumes. The faces of our control volumes are set to coincide with faces of the underlying gridboxes. This arrangement enables an exact closure of volume budget except for the tiny truncation error at machine precision with a relative error of the order of $10^{-14}$ or less
@@ -862,5 +843,5 @@ Even if we wanted to calculate a transport like $\mathcal{U}$ above, defining a 
 \clearpage
 \bibliographystyle{agufull08.bst}
 \bibliography{references.bib}
-\end{document}
 
+\end{document}
